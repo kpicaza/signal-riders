@@ -5,7 +5,10 @@ var wave: Wave = Wave.new()
 func _ready():
 	var h := get_viewport_rect().size.y
 	wave.base_y = h * 0.5
+	wave.spawn_y = wave.base_y
+	wave.spawn_blend_len = 440.0
 	wave.thickness = 60.0
+	wave.min_thickness = 6.0
 
 func _process(delta):
 	wave.phase -= delta * 2.0
@@ -21,7 +24,7 @@ func _draw():
 
 	var x := 0.0
 	while x <= width:
-		var band := wave.get_band_at_x(x)
+		var band : WaveBand = wave.get_band_at_x(x)
 		var top := Vector2(x, band.top)
 		var bottom := Vector2(x, band.bottom)
 

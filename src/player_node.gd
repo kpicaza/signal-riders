@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var wave_node: Node2D = %Wave
 
-@export var hit_x: float = 390.0
+@export var hit_x: float = 600.0
 @export var follow_speed: float = 200.0
 @export var move_speed: float = 200.0
 
