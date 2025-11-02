@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0677v7rjfvv6"]
+[gd_scene load_steps=5 format=3 uid="uid://d0677v7rjfvv6"]
 
 [ext_resource type="Script" uid="uid://tc5qw1drua5e" path="res://src/wave_node.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dq4uqi35ykeo7" path="res://src/game.gd" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://bjml21lafiiop" path="res://src/player_node.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://ckn0mytvtc3kg" path="res://src/hud.gd" id="4_jyhfs"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_sugp2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(720, 360)
@@ -17,3 +20,15 @@ script = ExtResource("1_o5qli")
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("2_0wfyh")
+
+[node name="Hud" type="CanvasLayer" parent="."]
+script = ExtResource("4_jyhfs")
+
+[node name="Label" type="Label" parent="Hud"]
+anchors_preset = -1
+anchor_left = 0.94400007
+anchor_right = 1.0
+anchor_bottom = 0.064
+offset_left = 0.3199463
+offset_bottom = -0.040000916
+grow_horizontal = 0

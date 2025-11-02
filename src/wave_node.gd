@@ -1,6 +1,7 @@
 extends Node2D
 
 var wave: Wave = Wave.new()
+var session: GameSession = null
 
 func _ready():
 	var h := get_viewport_rect().size.y
@@ -10,7 +11,12 @@ func _ready():
 	wave.thickness = 60.0
 	wave.min_thickness = 6.0
 
+func set_session(game_session: GameSession) -> void:
+	session = game_session
+	
 func _process(delta):
+	if session == null or session.state != GameSession.State.PLAYING:
+		return
 	wave.phase -= delta * 2.0
 	queue_redraw()
 

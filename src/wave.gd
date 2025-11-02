@@ -6,7 +6,7 @@ var amplitude: float = 50.0
 var frequency: float = 1.0
 var phase: float = 0.0
 var thickness: float = 40.0
-var min_thickness: float = 4.0    # grosor al nacer
+var min_thickness: float = 4.0
 
 var spawn_y: float = 200.0
 var spawn_static_len: float = 40.0
