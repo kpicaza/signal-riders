@@ -26,7 +26,8 @@ func _process(delta: float) -> void:
 	var band : WaveBand = wave_node.wave.get_band_at_x(hit_x)
 	inside = model.is_inside_band(band)
 
-	if not inside:
+	var collided := model.clamp_to_band(band)
+	if collided:
 		signal_health -= 0.2 * delta
 
 	position.x = hit_x

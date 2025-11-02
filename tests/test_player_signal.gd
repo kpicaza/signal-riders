@@ -61,3 +61,23 @@ func test_player_applies_input_down():
 	player.apply_input(1.0, 50.0, 1.0)
 
 	assert_eq(player.y, 250.0)
+
+func test_player_clamps_to_band_top_and_flags_collision():
+	var band := WaveBand.new(100.0, 120.0, 140.0)
+	var player := PlayerSignal.new()
+	player.y = 80.0   # 👈 ahora sí está FUERA por arriba
+
+	var collided := player.clamp_to_band(band)
+
+	assert_eq(player.y, 100.0)
+	assert_true(collided)
+
+func test_player_does_not_collide_when_inside_band():
+	var band := WaveBand.new(100.0, 120.0, 140.0)
+	var player := PlayerSignal.new()
+	player.y = 120.0
+
+	var collided := player.clamp_to_band(band)
+
+	assert_eq(player.y, 120.0)
+	assert_false(collided)

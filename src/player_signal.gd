@@ -14,3 +14,15 @@ func move_towards(target_y: float, speed: float, delta: float) -> void:
 
 func apply_input(dir: float, speed: float, delta: float) -> void:
 	y += dir * speed * delta
+
+func clamp_to_band(band: WaveBand) -> bool:
+	var collided := false
+
+	if y < band.top:
+		y = band.top
+		collided = true
+	elif y > band.bottom:
+		y = band.bottom
+		collided = true
+
+	return collided
