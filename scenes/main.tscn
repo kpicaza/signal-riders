@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0677v7rjfvv6"]
+[gd_scene load_steps=3 format=3 uid="uid://d0677v7rjfvv6"]
 
 [ext_resource type="Script" uid="uid://tc5qw1drua5e" path="res://src/wave_node.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bjml21lafiiop" path="res://src/player_node.gd" id="2_0wfyh"]
 
 [node name="Main" type="Node2D"]
 
@@ -11,4 +12,8 @@ offset_bottom = 360.0
 color = Color(0, 0, 0, 1)
 
 [node name="Wave" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_o5qli")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("2_0wfyh")

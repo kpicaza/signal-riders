@@ -1,6 +1,6 @@
 extends Node2D
 
-var wave := Wave.new()
+var wave: Wave = Wave.new()
 
 func _ready():
 	var h := get_viewport_rect().size.y
